@@ -1,0 +1,36 @@
+Pipeline COVID-19 | execução UTC: 2026-11-23T08:17:33+00:00 | fonte: csv_local
+Parâmetros: {'project': 'ebac1-487019', 'table': 'ebac1-487019.db_covid19.covid_19_geographic_distribution_worldwide', 'country': 'Brazil', 'top_n': 20, 'location': None, 'output_dir': 'output', 'source': 'auto', 'local_csv': 'db_covid19.csv'}
+
+[OK    ] top_paises: colunas -> 4 colunas esperadas
+[OK    ] top_paises: tipo de 'country_region' -> esperado=object obtido=object
+[OK    ] top_paises: tipo de 'total_confirmed' -> esperado=int64 obtido=int64
+[OK    ] top_paises: tipo de 'total_deaths' -> esperado=int64 obtido=int64
+[OK    ] top_paises: tipo de 'max_confirmed_accumulated' -> esperado=int64 obtido=int64
+[OK    ] top_paises: quantidade de linhas -> 20 (esperado 20)
+[OK    ] top_paises: valores nulos -> 0
+[OK    ] top_paises: países duplicados -> 0
+[OK    ] top_paises: ordenado por casos (desc)
+[OK    ] top_paises: totais negativos -> 0
+[OK    ] top_paises: mortes > casos -> 0
+[OK    ] top_paises: soma diária == acumulado final -> 0 país(es) divergente(s)
+[OK    ] serie_brazil: colunas -> 5 colunas esperadas
+[OK    ] serie_brazil: tipo de 'date' -> esperado=datetime64 obtido=datetime64[us]
+[OK    ] serie_brazil: tipo de 'country_region' -> esperado=object obtido=object
+[OK    ] serie_brazil: tipo de 'confirmed' -> esperado=int64 obtido=int64
+[OK    ] serie_brazil: tipo de 'deaths' -> esperado=int64 obtido=int64
+[OK    ] serie_brazil: tipo de 'confirmed_accumulated' -> esperado=int64 obtido=int64
+[OK    ] serie_brazil: linhas -> 350
+[OK    ] serie_brazil: valores nulos -> 0
+[OK    ] serie_brazil: datas duplicadas -> 0
+[OK    ] serie_brazil: filtro de país aplicado
+[OK    ] serie_brazil: datas faltantes no intervalo -> 0
+[OK    ] serie_brazil: valores diários negativos (correções da fonte, mantidos) -> 0
+[OK    ] serie_brazil: acumulado não decrescente
+[OK    ] serie_brazil: soma diária - acumulado final -> 0
+[OK    ] cruzamento: total Brazil no ranking == soma da série
+[OK    ] exportação CSV: covid_top20_paises -> output/csv/covid_top20_paises.csv
+[FALHA ] exportação Parquet: covid_top20_paises -> instale pyarrow:  pip install pyarrow
+[OK    ] exportação CSV: covid_serie_temporal_brazil -> output/csv/covid_serie_temporal_brazil.csv
+[FALHA ] exportação Parquet: covid_serie_temporal_brazil -> instale pyarrow:  pip install pyarrow
+
+Resumo: 2 falha(s)
